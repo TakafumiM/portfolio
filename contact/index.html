@@ -4,15 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <h1>Contact</h1>
-    <nav>
-        <a href="https://takafumim.github.io/portfolio/index.html">Home Page</a>
-        <a href="https://takafumim.github.io/portfolio/contact/index.html">Contact</a> |
-        <a href="https://takafumim.github.io/portfolio/projects/index.html">Projects</a>
-        <a href="https://github.com/TakafumiM" target="_blank" rel="noopener noreferrer">Github Profile</a>
-    </nav>
 </head>
 <body>
-    
+    <h1>Contact</h1>
+    <nav>
+        <a href="https://takafumim.github.io/portfolio/index.html">Home Page</a> |
+        <a href="https://takafumim.github.io/portfolio/contact/index.html">Contact</a> |
+        <a href="https://takafumim.github.io/portfolio/projects/index.html">Projects</a> |
+        <a href="https://github.com/TakafumiM" target="_blank" rel="noopener noreferrer">Github Profile</a> |
+    </nav>
+    <form action="mailto:tamatsui@ucsd.edu" method="POST" enctype="text/plain">
+        <label>
+            email address:
+            <input name="email" type="email" />
+        </label>
+        <label>
+            subject:
+            <input name="subject"/>
+        </label>
+        <label>
+            message:
+            <textarea name="body"></textarea> 
+        </label>
+        <button>submit</button>
+    </form>
 </body>
 </html>
