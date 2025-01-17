@@ -2,6 +2,11 @@
   --color-accent: #1e4b8a;
   --hover-bg: rgba(61, 30, 233, 0.1);
   --underline-height: 3px;
+  --base-font-size: 16px;
+  --heading-line-height: 1.1;
+  --h1-scale: 4;
+  --h2-scale: 2;
+  --h3-scale: 1.5;
 }
 
 body {
@@ -56,3 +61,79 @@ nav a:hover::after {
   background: var(--color-accent);
 }
 
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form label {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+  align-self: center;
+}
+
+form input,
+form textarea,
+form select,
+form button {
+  grid-column: 2;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form button {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+.projects{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+}
+
+section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1em;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  border: 1px solid #ccc;
+  padding: 1em;
+  border-radius: 5px;
+}
+
+article h2 {
+  margin: 0; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: var(--heading-line-height);
+  text-wrap: balance;
+  margin: 0 0 1em;
+}
+
+h1 {
+  font-size: calc(var(--base-font-size) * var(--h1-scale));
+}
+
+h2 {
+  font-size: calc(var(--base-font-size) * var(--h2-scale));
+}
+
+h3 {
+  font-size: calc(var(--base-font-size) * var(--h3-scale));
+}
+
+h4, h5, h6 {
+  font-size: 1rem;
+}
