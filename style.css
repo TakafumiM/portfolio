@@ -1,6 +1,58 @@
-body {
-  /* Set line height to 1.5 times the font size
-	   and use the OS’s UI font as the website font
-	 */
-  font: 100%/1.5 system-ui;
+:root {
+  --color-accent: #1e4b8a;
+  --hover-bg: rgba(61, 30, 233, 0.1);
+  --underline-height: 3px;
 }
+
+body {
+  font: 100%/1.5 system-ui;
+  max-width: 100ch;
+  margin-inline: auto;
+  padding: 25px 50px;
+  color: inherit;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: oklch(80% 3% 200);
+  padding-bottom: 0.4em;
+  margin-bottom: 20px;
+  color: inherit;
+  text-align: center;
+}
+
+nav a {
+  font-weight: 600;
+  text-decoration: none;
+  color: #333;
+  padding: 10px 5px;
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: center;
+}
+
+nav a::after {
+  color: inherit;
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: var(--underline-height);
+  background: transparent;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: var(--hover-bg);
+  color: var(--color-accent);
+}
+
+nav a:hover::after {
+  background: var(--color-accent);
+}
+
