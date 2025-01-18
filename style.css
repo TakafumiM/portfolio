@@ -30,7 +30,7 @@ nav {
   text-align: center;
 }
 
-.current {
+a.current {
   font-weight: 600;
   text-decoration: none;
   color: #333;
