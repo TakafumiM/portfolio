@@ -30,7 +30,7 @@ nav {
   text-align: center;
 }
 
-a.current {
+a {
   font-weight: 600;
   text-decoration: none;
   color: #333;
@@ -40,80 +40,18 @@ a.current {
   text-align: center;
 }
 
-nav a::after {
-  color: inherit;
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: var(--underline-height);
-  background: transparent;
-  transition: background-color 0.3s ease;
+a.current {
+  color: var(--color-accent); /* Highlight color */
+  border-bottom: var(--underline-height) solid var(--color-accent); /* Underline */
 }
 
-nav a:hover {
+a:hover {
   background-color: var(--hover-bg);
   color: var(--color-accent);
 }
 
-nav a:hover::after {
+a:hover::after {
   background: var(--color-accent);
-}
-
-form {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1em;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-form label {
-  display: grid;
-  grid-template-columns: subgrid;
-  grid-column: 1 / -1;
-  align-self: center;
-}
-
-form input,
-form textarea,
-form select,
-form button {
-  grid-column: 2;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-form button {
-  grid-column: 1 / -1;
-  justify-self: center;
-}
-
-.projects{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-}
-
-section {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 1em;
-  margin: 2rem auto;
-  max-width: 800px;
-}
-
-article {
-  display: grid;
-  grid-template-rows: subgrid;
-  grid-row: span 3;
-  border: 1px solid #ccc;
-  padding: 1em;
-  border-radius: 5px;
-}
-
-article h2 {
-  margin: 0; 
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -136,4 +74,12 @@ h3 {
 
 h4, h5, h6 {
   font-size: 1rem;
+}
+
+img.fit-picture {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 20px auto;
 }
