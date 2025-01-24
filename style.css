@@ -98,3 +98,49 @@ img.fit-picture {
   border: 1px solid #ddd;
   font-size: 1rem;
 }
+
+article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  border: 1px solid #ccc;
+  padding: 1em;
+  border-radius: 5px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+  max-width: 600px;
+  margin: 0 auto;
+}
+form label {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+  align-self: center;
+}
+form input,
+form textarea,
+form select,
+form button {
+  grid-column: 2;
+  width: 100%;
+  box-sizing: border-box;
+}
+form button {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+.projects{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+}
+section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1em;
+  margin: 2rem auto;
+  max-width: 800px;
+}
