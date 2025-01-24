@@ -1,12 +1,17 @@
 :root {
   --color-accent: #1e4b8a;
-  --hover-bg: rgba(61, 30, 233, 0.1);
+  --hover-bg: --border-color: oklch(45% 0.2702 274.29 / 40%);
   --underline-height: 3px;
   --base-font-size: 16px;
   --heading-line-height: 1.1;
   --h1-scale: 4;
   --h2-scale: 2;
   --h3-scale: 1.5;
+  --border-color: --border-color: oklch(50% 10% 200 / 40%);
+}
+
+html {
+  color-scheme: light dark;
 }
 
 body {
@@ -14,16 +19,15 @@ body {
   max-width: 100ch;
   margin-inline: auto;
   padding: 25px 50px;
-  color: inherit;
+  color: var(--border-color);
 }
 
 nav {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: oklch(80% 3% 200);
+  border-bottom: 1px solid;
+  border-bottom-color: var(--border-color);
   padding-bottom: 0.4em;
   margin-bottom: 20px;
   color: inherit;
@@ -33,7 +37,7 @@ nav {
 a {
   font-weight: 600;
   text-decoration: none;
-  color: #333;
+  color: inherit;
   padding: 10px 5px;
   position: relative;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -41,22 +45,17 @@ a {
 }
 
 a.current {
-  color: var(--color-accent); /* Highlight color */
-  border-bottom: var(--underline-height) solid var(--color-accent); /* Underline */
+  color: var(--color-accent);
+  border-bottom: var(--underline-height) solid var(--color-accent);
 }
 
 a:hover {
-  background-color: var(--hover-bg);
+  background-color: rgba(30, 75, 138, 0.1);
   color: var(--color-accent);
-}
-
-a:hover::after {
-  background: var(--color-accent);
 }
 
 h1, h2, h3, h4, h5, h6 {
   line-height: var(--heading-line-height);
-  text-wrap: balance;
   margin: 0 0 1em;
 }
 
@@ -72,14 +71,30 @@ h3 {
   font-size: calc(var(--base-font-size) * var(--h3-scale));
 }
 
-h4, h5, h6 {
-  font-size: 1rem;
-}
-
 img.fit-picture {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
   display: block;
   margin: 20px auto;
+}
+
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.color-scheme select {
+  padding: 0.3em;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
 }
