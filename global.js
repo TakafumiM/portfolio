@@ -1,8 +1,8 @@
 let pages = [
-    {url: 'portfolio/', title: 'Home'},
-    {url: 'portfolio/projects/', title: 'Projects'},
-    {url: 'portfolio/contact/', title: 'Contact'},
-    {url: 'portfolio/resume/', title: 'Resume'},
+    {url: '/portfolio/', title: 'Home'},
+    {url: '/portfolio/projects/', title: 'Projects'},
+    {url: '/portfolio/contact/', title: 'Contact'},
+    {url: '/portfolio/resume/', title: 'Resume'},
     {url: 'https://github.com/TakafumiM', title: 'GitHub', target: '_blank'}
   ];
   
@@ -12,13 +12,12 @@ let pages = [
   for (let p of pages) {
     let {url, title, target} = p;
     const ARE_WE_HOME = document.documentElement.classList.contains('home');
-    url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
-  
+    
     let a = document.createElement('a');
     a.href = url;
     a.textContent = title;
     if (target) 
-        a.target = target;
+      a.target = target;
   
     if (a.host === location.host && a.pathname === location.pathname) {
       a.classList.add('current');
@@ -26,7 +25,7 @@ let pages = [
   
     nav.append(a);
   }
-  
+
   document.body.insertAdjacentHTML(
     'afterbegin',
     `
