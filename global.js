@@ -39,12 +39,20 @@ let pages = [
     </label>
     `
   );
-  
+
   const themeSwitch = document.getElementById('theme-switch');
   themeSwitch.addEventListener('change', (event) => {
     const theme = event.target.value;
     document.documentElement.style.setProperty('color-scheme', theme);
-  });
+    localStorage.colorScheme = theme;
+    
+  })
+
+  if ("colorScheme" in localStorage) {
+    const savedTheme = localStorage.colorScheme;
+    document.documentElement.style.setProperty('color-scheme', savedTheme);
+    themeSwitch.value = savedTheme; 
+  };
 
   
   
