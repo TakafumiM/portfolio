@@ -2,7 +2,7 @@
   --color-accent: #1e4b8a;
   --hover-bg: --border-color: oklch(45% 0.2702 274.29 / 40%);
   --underline-height: 3px;
-  --base-font-size: 16px;
+  --base-font-size: 12px;
   --heading-line-height: 1.1;
   --h1-scale: 4;
   --h2-scale: 2;
@@ -71,12 +71,13 @@ h3 {
   font-size: calc(var(--base-font-size) * var(--h3-scale));
 }
 
-img.fit-picture {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  display: block;
-  margin: 20px auto;
+.profile-picture {
+  width: 20vw;
+  height: 20vw;
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .color-scheme {
@@ -136,6 +137,7 @@ form button {
 .projects{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  margin-bottom: 50px;
 }
 section {
   display: grid;
@@ -143,4 +145,95 @@ section {
   gap: 1em;
   margin: 2rem auto;
   max-width: 800px;
+}
+
+.profile-container {
+  display: flex; /* Use Flexbox to align items horizontally */
+  align-items: center; /* Vertically center the items */
+  gap: 20px; /* Add space between the image and bio */
+  margin-bottom: 70px;
+}
+
+.profile-picture {
+  width: 150px; /* Set the width of the image */
+  height: 150px; /* Set the height of the image (must be equal to width) */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image covers the entire circle without stretching */
+  border: 3px solid #fff; /* Optional: Add a border around the circle */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for a polished look */
+}
+
+
+.bio {
+  max-width: 400px; /* Limit the width of the bio text */
+}
+
+.bio h2 {
+  margin: 0 0 10px 0; /* Add spacing below the name */
+  font-size: 24px; /* Adjust the font size of the name */
+}
+
+.bio p {
+  margin: 0; /* Remove default margin for the paragraph */
+  font-size: 16px; /* Adjust the font size of the bio text */
+  line-height: 1.5; /* Improve readability with line height */
+}
+
+.github-stats {
+  font-family: Arial, sans-serif;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--background-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.github-stats dt {
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.github-stats dd {
+  margin: 5px 0 15px 0;
+  font-size: 16px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.github-stats dd::before {
+  content: "•";
+  color: var(--accent-color);
+  font-size: 20px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.github-stats dt:first-child {
+  margin-top: 0;
+}
+
+.github-stats dd:hover {
+  background-color: var(--hover-background);
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+@media (max-width: 600px) {
+  .github-stats {
+      padding: 15px;
+  }
+
+  .github-stats dt {
+      font-size: 16px;
+  }
+
+  .github-stats dd {
+      font-size: 14px;
+  }
 }

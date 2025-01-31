@@ -6,10 +6,25 @@
   <title>Takafumi Matsui: Personal site and Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <script type="module" src="global.js"></script>
+  <script src="index.js" type="module" defer></script>
 </head>
 <body>
-  <h1>Takafumi Matsui</h1>
-  <p>Data Science Major at University of California, San Diego</p>
-  <img class="fit-picture" src="image/PXL_20240924_015502853.jpg" alt="My cat and me.">
+  <div class="profile-container">
+    <img class="profile-picture" src="image/PXL_20240924_015502853.jpg" alt="My cat and me.">
+    <div class="bio">
+        <h2>Takafumi Matsui</h2>
+        <p>Data Science Major at University of California, San Diego</p>
+    </div>
+</div>  
+  <h2>Latest Projects</h2>
+  <div class="projects">
+      <!-- Dynamically added content will appear here -->
+  </div>
+
+  
+
+  <!-- <h2>GitHub Status</h2> -->
+  <div id="profile-stats"></div>
+
 </body>
 </html>
