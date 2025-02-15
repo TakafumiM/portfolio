@@ -335,3 +335,122 @@ path {
 path {
   cursor: pointer;
 }
+
+.gridlines line {
+  stroke: rgba(0, 0, 0, 0.1); /* Light gray color with transparency */
+  stroke-width: 1; /* Thin lines */
+}
+
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+  margin: 0;
+}
+
+dl.info dt {
+  font-weight: normal;
+  color: #666;
+}
+
+dl.info dd {
+  margin: 0;
+  font-weight: bold;
+}
+
+.tooltip {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 0.5em;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+#commit-tooltip {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle elevation effect */
+  border-radius: 10px; /* Rounded corners */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  padding: 1em; /* Appropriate padding for spacing */
+}
+
+dl.info {
+  /* ... other styles ... */
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8; /* 5 + 3 */
+  }
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: black;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+circle.selected {
+  fill: #ff6b6b;
+}
+
+.tooltip {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #333;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  min-width: 200px;
+  transition: opacity 0.2s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tooltip[hidden] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#commit-tooltip dt {
+  color: #666;
+  font-size: 0.9em;
+  margin-top: 0.5em;
+}
+
+#commit-tooltip dd {
+  margin-left: 0;
+  font-weight: 500;
+}
+
+#commit-tooltip a {
+  color: var(--color-accent);
+}
+
+#commit-tooltip a:hover {
+  text-decoration: underline;
+  background-color: transparent;
+}

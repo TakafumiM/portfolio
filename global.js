@@ -3,6 +3,7 @@ let pages = [
     {url: '/portfolio/projects/', title: 'Projects'},
     {url: '/portfolio/contact/', title: 'Contact'},
     {url: '/portfolio/resume/', title: 'Resume'},
+    {url: '/portfolio/meta/', title: 'Meta Data'},
     {url: 'https://github.com/TakafumiM', title: 'GitHub', target: '_blank'}
   ];
   
@@ -107,7 +108,6 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
 
 export async function fetchGitHubData(username) {
   const response = await fetch(`https://api.github.com/users/${username}`);
-  console.log(response);
   if (!response.ok) {
       throw new Error(`Failed to fetch GitHub data: ${response.statusText}`);
   }
