@@ -1,5 +1,11 @@
 [
     {
+        "title": "Interactive Data Visualization Of Bikers in Boston",
+        "year": "2025",
+        "image": "./image/bikewatching.png",
+        "description": "This project performed a data visualization in JavaScript to display the bike traffic in the city of Boston with interactive features."
+    },
+    {
         "title": "Prediction Model for the League of Legends Professional Scene at the 15 Minute Mark",
         "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
@@ -16,12 +22,6 @@
         "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "This project performed a data analysis on home field advantage in the Major League Baseball. The analysis was conducted using data from the 2017 MLB season to the 2023 MLB season and focused on the impact of home field advantage on the outcome of games."
-    },
-    {
-        "title": "Quia accusantium sunt odio!",
-        "year": "1984",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Unde, quos. Fugiat sit quis explicabo omnis harum perferendis praesentium labore ut perspiciatis nisi, neque accusamus suscipit qui voluptatibus tempore. Dignissimos ipsum necessitatibus deserunt officia unde eius vel porro ex."
     },
     {
         "title": "Accusantium facilis deleniti exercitationem!",
