@@ -94,14 +94,31 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
 
   projects.forEach(project => {
       const article = document.createElement('article');
-      article.innerHTML = `
-          <${headingLevel}>${project.title || 'No Title'}</${headingLevel}>
-          ${project.image ? `<img src="${project.image}" alt="${project.title}">` : ''}
-          <div>
-            <p>${project.description || 'No description available.'}</p>
-            <p2>${project.year || 'No year information available'}<\p2>
-          <\div>
-      `;
+      let projectContent;
+      if (project.link) {        
+        projectContent = `
+        <${headingLevel}>
+          <a href="${project.link}" style="color: inherit; text-decoration: none; font: inherit;">
+            ${project.title || 'No Title'}
+          </a>
+        </${headingLevel}>
+        ${project.image ? `<img src="${project.image}" alt="${project.title}">` : ''}
+        <div>
+          <p>${project.description || 'No description available.'}</p>
+          <p>${project.year || 'No year information available'}</p>
+        </div>
+    `;
+      } else {
+        projectContent = `
+        <${headingLevel}>${project.title || 'No Title'}</${headingLevel}>
+        ${project.image ? `<img src="${project.image}" alt="${project.title}">` : ''}
+        <div>
+          <p>${project.description || 'No description available.'}</p>
+          <p>${project.year || 'No year information available'}</p>
+        </div>
+    `;
+      }
+      article.innerHTML = projectContent;
       containerElement.appendChild(article);
   });
 }
