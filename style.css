@@ -8,7 +8,7 @@
   --h1-scale: 4;
   --h2-scale: 2;
   --h3-scale: 1.5;
-  --border-color: oklch(50% 10% 200 / 40%);
+  --border-color: oklch(50% 10% 200 / 80%);
 }
 
 /* General styles */
@@ -21,7 +21,7 @@ body {
   max-width: 100ch;
   margin-inline: auto;
   padding: 25px 50px;
-  color: #333;
+  color: var(--border-color);
 }
 
 a {
@@ -87,6 +87,10 @@ article {
   border: 1px solid #ccc;
   padding: 1em;
   border-radius: 5px;
+}
+
+article a {
+  font-size: calc(var(--base-font-size) * var(--h2-scale));
 }
 
 article img {
