@@ -2,7 +2,7 @@
     {
         "title": "Interactive Data Visualization Of Bikers in Boston",
         "year": "2025",
-        "image": "/image/bikewatching.png",
+        "image": "portfolio/image/bikewatching.png",
         "description": "This project performed a data visualization in JavaScript to display the bike traffic in the city of Boston with interactive features.",
         "link": "https://takafumim.github.io/bikewatching/"
     },
