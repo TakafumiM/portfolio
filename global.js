@@ -1,7 +1,6 @@
 let pages = [
     {url: '/portfolio/', title: 'Home'},
     {url: '/portfolio/projects/', title: 'Projects'},
-    {url: '/portfolio/contact/', title: 'Contact'},
     {url: '/portfolio/resume/', title: 'Resume'},
     {url: '/portfolio/meta/', title: 'Meta Data'},
     {url: 'https://github.com/TakafumiM', title: 'GitHub', target: '_blank'}
